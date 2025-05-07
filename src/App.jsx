@@ -12,6 +12,7 @@ import mainapartmentimg2 from './assets/mainapartmentimg2.jpg';
 import room1img2 from './assets/room1img2.jpg';
 import mainapartmentimg3 from './assets/mainapartmentimg3.jpg';
 
+
 function App() {
   const handleCheckAvailability = (data) => {
     console.log("Customer selected:", data);
@@ -57,9 +58,7 @@ function App() {
       <header className="header">
       <img src={logo} alt="margies logo" className="logo" />
       <span className="brand-name">Margie’s</span>
-        <div className="logo">           </div>
-        <div className="logo">           </div>
-        <div className="logo">           </div>
+        
         <nav>
           <ul className="nav-links">
             <li><a href="#home">Home</a></li>
