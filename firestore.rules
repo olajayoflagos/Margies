@@ -1,0 +1,28 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default denial for all other documents
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Allow anyone to create documents in the 'messages' collection
+    match /messages/{messageId} {
+      allow create: if true; // Allow creation by anyone
+      allow read, update, delete: if false; // Prevent reads/updates/deletes by clients
+    }
+
+// Allow anyone to create documents in the 'bookings' collection
+match /bookings/{bookingId} {
+  allow create: if true; // Allow creation by anyone
+  allow read, update, delete: if false; // Prevent reads/updates/deletes by clients
+}
+
+    // Allow specific rules for the 'rooms' collection
+    match /rooms/{roomId} {
+      allow create: if true; // Allow creation by anyone
+      allow read, update, delete: if false; // Prevent reads/updates/deletes by clients
+    }
+  }
+}

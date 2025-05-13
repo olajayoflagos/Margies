@@ -1,0 +1,138 @@
+.availability {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: #ffffff;
+  border: 1px solid #e6ecf1;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(50, 63, 77, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.availability h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #003366;
+  font-weight: 600;
+}
+
+.availability input,
+.availability select,
+.availability .react-datepicker-wrapper {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccd6df;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.availability input:focus,
+.availability select:focus,
+.availability .react-datepicker__input-container input:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+.availability label {
+  font-weight: 500;
+  color: #333;
+  margin-top: 10px;
+  display: block;
+}
+
+.availability button {
+  width: 100%;
+  background-color: #0056b3;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.availability button:hover {
+  background-color: #004494;
+}
+
+.availability .react-datepicker-wrapper {
+  display: block;
+}
+
+.availability .react-datepicker__input-container input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccd6df;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* Spinner */
+.spinner {
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e0e0e0;
+  border-top: 4px solid #0056b3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Alerts */
+.alert {
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #e6f4ff;
+  color: #004a99;
+  border: 1px solid #b3d8ff;
+}
+
+.alert-error {
+  background-color: #fff3f3;
+  color: #cc0000;
+  border: 1px solid #f5cccc;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .availability {
+    margin: 20px;
+    padding: 20px 15px;
+  }
+
+  .availability h2 {
+    font-size: 20px;
+  }
+
+  .availability input,
+  .availability select,
+  .availability .react-datepicker__input-container input {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .availability button {
+    font-size: 15px;
+    padding: 12px;
+  }
+}

@@ -1,0 +1,55 @@
+.admin-login-container {
+    padding: 40px;
+    text-align: center; /* Center the content inside the container */
+    max-width: 400px; /* Limit the width */
+    margin: 50px auto; /* Center the container on the page and add vertical space */
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  }
+  
+  .admin-login-container h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .admin-login-form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 15px; /* Space between form elements */
+    align-items: center; /* Center form elements horizontally */
+  }
+  
+  .admin-login-input {
+    padding: 12px; /* Adjusted padding */
+    font-size: 16px;
+    width: 100%; /* Make input fill its container width */
+    max-width: 300px; /* Max width for input */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Consistent with other forms */
+    box-sizing: border-box; /* Include padding and border in width */
+  }
+  
+  .admin-login-input:focus {
+      outline: none;
+      border-color: #1a73e8; /* Focus highlight */
+      box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+  }
+  
+  .admin-login-button {
+    /* Using button styles consistent with App.css theme */
+    background-color: #1a73e8; /* Blue button */
+    color: white;
+    border: none;
+    padding: 12px 20px; /* Adjusted padding */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Consistent with other buttons */
+    transition: background-color 0.3s ease;
+    width: auto; /* Button width based on content */
+  }
+  
+  .admin-login-button:hover {
+    background-color: #0f4ea6; /* Darker blue on hover */
+  }

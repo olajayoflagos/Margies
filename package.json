@@ -1,31 +1,42 @@
 {
   "name": "my-hotel",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+     "start": "set HTTPS=true&&SSL_CRT_FILE=cert.pem&&SSL_KEY_FILE=key.pem&&react-scripts start"
   },
   "dependencies": {
+    "22": "^0.0.0",
+    "@react-pdf/renderer": "^4.3.0",
+    "cors": "^2.8.5",
     "date-fns": "^4.1.0",
-    "firebase": "^11.6.1",
+    "firebase": "^11.7.1",
+    "firebase-admin": "^13.3.0",
+    "firebase-functions": "^6.3.2",
+    "jspdf": "^3.0.1",
+    "normalize.css": "^8.0.1",
     "react": "^19.0.0",
     "react-datepicker": "^8.3.0",
     "react-dom": "^19.0.0",
-    "react-responsive-carousel": "^3.2.23"
+    "react-icons": "^5.5.0",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^7.6.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.22.0",
+    "@eslint/js": "^9.26.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.22.0",
+    "eslint": "^9.26.0",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
+    "globals": "^16.1.0",
     "vite": "^6.3.1"
   }
 }

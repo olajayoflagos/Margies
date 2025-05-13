@@ -1,68 +1,95 @@
+/* index.css */
+
+/* Reset some default styles and set up basic typography */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  /* Using a system font stack is good */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6; /* Slightly increased line height for readability */
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Removed color-scheme and dark mode specific settings for a consistent light theme */
+  /* color-scheme: light dark; */
+
+  /* Default text color and background */
+  color: #333; /* Dark grey for text */
+  background-color: #f4f7f6; /* Light background color - consistent with App.css body */
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%; /* Prevent text size adjustment on mobile */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Basic body style - can be minimal if App.css body handles main layout */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* These styles are now largely handled by .App and .section in App.css */
+  /* display: flex; */
+  /* place-items: center; */
+  /* min-width: 320px; */
+  /* min-height: 100vh; */
+   background-color: #f4f7f6; /* Ensure light background globally */
+   color: #333; /* Ensure default text color globally */
 }
 
+
+/* Link styling - adjusted colors */
+a {
+  font-weight: 500;
+  color: #1a73e8; /* Using the primary blue for links */
+  text-decoration: none; /* Remove underline by default */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+}
+a:hover {
+  color: #0f4ea6; /* Darker blue on hover */
+  text-decoration: underline; /* Underline on hover for clarity */
+}
+
+/* Heading styles - can be further refined in App.css or specific component CSS */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2.5em; /* Slightly smaller h1 */
+  line-height: 1.2;
+  color: #333; /* Consistent heading color */
+  margin-top: 0; /* Reset top margin */
 }
 
+h2 {
+    font-size: 2em;
+    line-height: 1.3;
+    color: #333;
+    margin-top: 0;
+}
+
+/* General button styling - these will be overridden by more specific classes like .contact-form button */
+/* Keeping a base style but rely on specific classes */
 button {
-  border-radius: 8px;
+  border-radius: 5px; /* Consistent with forms */
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 10px 20px; /* Adjusted padding */
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #1a73e8; /* Default button color */
+  color: white; /* Default button text color */
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.3s ease;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: #0f4ea6; /* Darker blue on hover */
+  border-color: transparent; /* Keep border transparent */
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto #1a73e8; /* Focus outline using the primary blue */
+  outline-offset: 2px; /* Add some space */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Removed dark mode media query as we are aiming for a consistent light theme */
+/* @media (prefers-color-scheme: light) { ... } */
+
+/* Add some global box-sizing for easier layout calculations */
+*, *::before, *::after {
+  box-sizing: border-box;
 }

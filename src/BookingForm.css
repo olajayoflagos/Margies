@@ -1,0 +1,158 @@
+/* BookingForm.css */
+
+.booking-form-container {
+    /* Similar styling to CheckAvailability and Contact forms */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 20px auto; /* Center and add vertical margin */
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333; /* Default text color */
+  }
+  
+  .booking-form-container h3 {
+      /* Consistent subheading styling */
+      font-size: 22px;
+      color: #555;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: center; /* Center heading */
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 5px;
+  }
+  
+  .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+  }
+  
+  .booking-form label {
+      font-weight: 500;
+      color: #555;
+      margin-bottom: 5px;
+  }
+  
+  .booking-form select,
+  .booking-form input[type="text"] /* Style Datepicker input field */
+  {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Make input/select fill container */
+    box-sizing: border-box;
+  }
+  
+  
+  /* Specific styling for the select dropdown */
+  .booking-form-select {
+      appearance: none; /* Remove default dropdown arrow */
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C114.7L159.1%2C22.4c-5.4-5.4-14.2-5.4-19.6%2C0L5.4%2C114.7c-5.4%2C5.4-5.4%2C14.2%2C0%2C19.6l19.6%2C19.6c2.7%2C2.7%2C6.2%2C4%2C9.8%2C4s7.1-1.3%2C9.8-4l90.8-90.8l90.8%2C90.8c2.7%2C2.7%2C6.2%2C4%2C9.8%2C4s7.1-1.3%2C9.8-4l19.6-19.6C292.4%2C128.9%2C292.4%2C120.1%2C287%2C114.7z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+      background-repeat: no-repeat;
+      background-position: right 10px top 50%;
+      background-size: 12px auto;
+      padding-right: 30px; /* Make space for the arrow */
+      cursor: pointer;
+  }
+  
+  
+  .booking-form select:focus,
+  .booking-form input:focus {
+      outline: none;
+      border-color: #1a73e8;
+      box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+  }
+  
+  /* Specific styles for react-datepicker inline calendar */
+  .booking-form .react-datepicker {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      background-color: #fff;
+      display: block; /* Center the calendar if needed */
+      margin: 0 auto; /* Center the inline calendar */
+  }
+  
+  /* Style for the DatePicker input field (which is wrapped by react-datepicker-wrapper) */
+  .booking-form .react-datepicker-wrapper input {
+      width: 100%; /* Make input fill container */
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      cursor: pointer;
+  }
+  .booking-form .react-datepicker-wrapper input:focus {
+       outline: none;
+      border-color: #1a73e8;
+      box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+  }
+  
+  
+  .booking-form button {
+    background-color: #1a73e8; /* Blue button */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    width: auto;
+    align-self: flex-start; /* Align button to the left */
+  }
+  
+  .booking-form button:hover:not(:disabled) {
+    background-color: #0f4ea6;
+  }
+  
+  .booking-form button:disabled {
+      background-color: #cccccc; /* Grey out when disabled */
+      cursor: not-allowed;
+      opacity: 0.7;
+  }
+  
+  /* Style for the status message */
+  .booking-form + p { /* Targets the paragraph right after the form */
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+      color: #1a73e8; /* Blue for success/info */
+  }
+  /* Optional: Add specific classes for success/error status */
+  /* .booking-success { color: green; } */
+  /* .booking-error { color: red; } */
+  
+  /* Responsive adjustments if needed */
+  @media (max-width: 768px) {
+      .booking-form-container {
+          padding: 15px;
+      }
+      .booking-form select,
+      .booking-form input[type="text"] {
+           width: 100%;
+      }
+  
+       /* Adjust datepicker width if needed for small screens */
+       .booking-form .react-datepicker {
+           /* Adjust as needed for mobile view, potentially make it not inline */
+           /* width: 100%; */
+       }
+       .booking-form .react-datepicker-wrapper {
+           width: 100%;
+       }
+       .booking-form .react-datepicker__input-container {
+           width: 100%;
+       }
+       .booking-form .react-datepicker__input-container input {
+            width: 100%;
+       }
+  }
+  
+  

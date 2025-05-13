@@ -1,97 +1,184 @@
+/* App.css */
+
+/* General body styles - let's rely more on the App div for layout */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* More modern sans-serif stack */
   scroll-behavior: smooth;
+  line-height: 1.6; /* Improve readability */
+  color: #333; /* Default text color */
+  background-color: #f4f7f6; /* Light background color */
 }
 
+/* The main app container */
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure app takes at least full viewport height */
+}
+
+
+/* Header Styling - inspired by clean headers */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 15px 30px; /* Slightly adjusted padding */
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Slightly softer shadow */
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Brand Container - to group logo and name */
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and name */
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+  /* Adjust logo size as needed, ensure it fits */
+  height: 60px; /* Example size */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain;
 }
+
+/*.brand-name {
+  font-size: 28px; 
+  font-weight: 700; 
+  color: #1a73e8; 
+}*/
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 25px; /* Adjusted spacing */
+  margin: 0;
+  padding: 0;
+  align-items: center; /* Align vertically */
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: #555; /* Darker grey for links */
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #0077cc;
+  color: #1a73e8; /* Hover color matches brand blue */
 }
 
-.hero {
-  background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
-  background-size: cover;
-  background-position: center;
-  height: 80vh;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-  text-align: center;
-  padding: 0 20px;
+/* Style for Admin Login/Logout button within nav */
+.admin-button-link {
+  /* Using button styles but applying them like a link */
+  background: none;
+  color: #555; /* Match other nav links */
+  border: none;
+  padding: 0; /* Remove button padding */
+  font: inherit; /* Inherit font styles */
+  cursor: pointer;
+  margin-right: 0; /* Remove margin from original button */
+  transition: color 0.3s ease;
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+.admin-button-link:hover {
+  color: #1a73e8; /* Hover color */
+  text-decoration: underline; /* Underline on hover */
 }
 
-.hero p {
-  font-size: 24px;
-}
 
+/* Hero section - Removed/ignored as carousel is used */
+
+
+/* Standard Section Styling */
 .section {
-  padding: 60px 50px;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 60px 30px; /* Adjusted padding */
+  max-width: 1000px; /* Increased max-width for content */
+  margin: 20px auto; /* Add margin top/bottom and center */
+  background-color: #ffffff; /* White background for sections */
+  border-radius: 8px; /* Rounded corners for sections */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
 }
 
+/* Main content area - allows footer to stick to bottom if content is short */
+main {
+    flex-grow: 1;
+    padding-top: 20px; /* Add some space below the sticky header */
+}
+
+
+/* Footer Styling */
 .footer {
-  background-color: #f5f5f5;
+  background-color: #333; /* Dark background for footer */
+  color: #f4f7f6; /* Light text color */
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
+  margin-top: auto; /* Pushes footer to the bottom */
   font-size: 14px;
 }
 
+
+/* Carousel Styling */
+.carousel-slide {
+  width: 100%;
+  /* Adjust height - 100vh might be too tall on some screens */
+  height: 70vh; /* Example height */
+  max-height: 600px; /* Max height cap */
+  overflow: hidden;
+  position: relative;
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.carouselmedia {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* react-responsive-carousel overrides */
 .carousel .slide img {
-  height: 80vh;
+  /* Override default if necessary, but .carouselmedia should handle it */
+  height: 100%; /* Ensure img fills container */
   object-fit: cover;
 }
 
 .carousel .legend {
-  background: rgba(0, 0, 0, 0.5);
-  font-size: 20px;
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker legend */
+  font-size: 18px; /* Slightly smaller font */
+  padding: 10px 20px; /* Adjusted padding */
+  bottom: 20px; /* Position from bottom */
+  opacity: 1; /* Ensure legend is visible */
+  transition: opacity 0.3s ease;
 }
 
+/* Optional: Hide legend on hover if image is the focus */
+/* .carousel-slide:hover .legend {
+    opacity: 0;
+} */
+
+
+/* Contact Form Styling */
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  max-width: 600px;
-  margin-top: 20px;
+  gap: 15px; /* Adjusted gap */
+  max-width: 500px; /* Max width for form */
+  margin: 20px auto 0; /* Center form */
+  padding: 20px;
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background */
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px; /* Space below heading */
 }
 
 .contact-form input,
@@ -99,65 +186,199 @@ body {
   padding: 12px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px; /* Slightly more rounded */
+  width: calc(100% - 24px); /* Account for padding */
+  box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #1a73e8; /* Highlight focus with blue */
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
 }
 
 .contact-form button {
-  background-color: #0077cc;
+  background-color: #1a73e8; /* Blue button */
   color: white;
   border: none;
-  padding: 12px;
+  padding: 12px 20px; /* Adjusted padding */
   font-size: 16px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 5px; /* Slightly rounded corners */
+  transition: background-color 0.3s ease;
+  width: auto; /* Button width based on content */
+  align-self: flex-start; /* Align button to the left */
 }
 
 .contact-form button:hover {
-  background-color: #005fa3;
+  background-color: #0f4ea6; /* Darker blue on hover */
 }
 
+/* Style for the status message */
+.contact-form + p { /* Targets the paragraph right after the form */
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #1a73e8; /* Blue for success/info */
+}
+/* Optional: Add specific classes for success/error status */
+/* .status-success { color: green; } */
+/* .status-error { color: red; } */
+
+
+/* Check Availability Section Styling */
+.check-availability {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+    max-width: 500px; /* Max width for this form */
+    margin: 20px auto; /* Center the section content */
+    padding: 20px;
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background */
+}
+
+.check-availability h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.check-availability form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.check-availability label {
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px; /* Space below label */
+}
+
+/* Style for the select dropdown */
+.check-availability select {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%; /* Make select fill container */
+  box-sizing: border-box;
+  appearance: none; /* Remove default dropdown arrow */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C114.7L159.1%2C22.4c-5.4-5.4-14.2-5.4-19.6%2C0L5.4%2C114.7c-5.4%2C5.4-5.4%2C14.2%2C0%2C19.6l19.6%2C19.6c2.7%2C2.7%2C6.2%2C4%2C9.8%2C4s7.1-1.3%2C9.8-4l90.8-90.8l90.8%2C90.8c2.7%2C2.7%2C6.2%2C4%2C9.8%2C4s7.1-1.3%2C9.8-4l19.6-19.6C292.4%2C128.9%2C292.4%2C120.1%2C287%2C114.7z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 12px auto;
+  padding-right: 30px; /* Make space for the arrow */
+  cursor: pointer;
+}
+
+.check-availability select:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+}
+
+
+/* Specific styles for react-datepicker input */
+.react-datepicker-wrapper input {
+    width: 100%; /* Make the datepicker input fill its container */
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer; /* Indicate clickable */
+}
+.react-datepicker-wrapper input:focus {
+     outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+}
+
+
+.check-availability button {
+  background-color: #1a73e8; /* Blue button */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  width: auto;
+  align-self: flex-start;
+}
+
+.check-availability button:hover:not(:disabled) {
+  background-color: #0f4ea6;
+}
+
+.check-availability button:disabled {
+    background-color: #cccccc; /* Grey out when disabled */
+    cursor: not-allowed;
+}
+
+/* Style for the availability status message */
+.check-availability + p { /* Targets the paragraph right after the form */
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #1a73e8; /* Blue for success/info */
+}
+/* Optional: Add specific classes for success/error status */
+/* .availability-success { color: green; } */
+/* .availability-error { color: red; } */
+
+/* Admin Button from original App.css - Keeping for now but preferred using .admin-button-link */
 .admin-button {
   padding: 10px 20px;
-  background-color: #0077cc;
+  background-color: #0077cc; /* Original blue */
   color: white;
   font-size: 16px;
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  margin-right: 20px;
+  margin-right: 20px; /* Keeping original margin */
 }
 
 .admin-button:hover {
-  background-color: #005fa3;
+  background-color: #005fa3; /* Original hover */
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 20px 50px;
-}
 
-.logo {
-  width: 200px;
-  height: 80px;
-  object-fit: contain;
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 10px;
+    }
+    .nav-links {
+        gap: 15px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .section {
+        padding: 40px 15px;
+    }
+     .contact-form,
+     .check-availability {
+        padding: 15px;
+     }
 
-.brand-name {
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.carousel-slide {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
-
-.carouselmedia {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+     /* Adjust datepicker width if needed for small screens */
+     .react-datepicker-wrapper {
+         width: 100%;
+     }
+     .react-datepicker__input-container {
+         width: 100%;
+     }
+     .react-datepicker__input-container input {
+          width: 100%;
+     }
 }
